@@ -1,0 +1,784 @@
+
+@font-face { font-family: Batman; src: url('Fiorello CG Condensed Regular.otf'); }
+@font-face { font-family: Navine; src: url('NavineDemo-SemiCondensed.ttf'); }
+
+body {
+    background: #e22a44;
+  color: white;
+  -webkit-touch-callout: none; /* iOS Safari */
+   -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Old versions of Firefox */
+       -ms-user-select: none; /* Internet Explorer/Edge */
+           user-select: none; /* Non-prefixed version, currently
+                                 supported by Chrome, Edge, Opera and Firefox */
+
+}
+
+/* // #046a38 */
+
+.butt {
+  font-family: "Batman" !important;
+  outline: none;
+box-shadow: none;
+margin-bottom: 5px;
+font-size: 5vh;
+box-shadow: 4px 4px 4px #9e1e2f, -4px -4px 4px #ff3c57;
+  border-radius: 20px;
+    transition: 0.5s;
+    color: white !important;
+}
+
+.tradeButts {
+  font-size: 4vh;
+}
+
+.tradecont {
+  background-color: #eaeaea;
+      border-radius: 20px;
+      box-shadow: 4px 4px 4px #0f4734, -4px -4px 4px #10986a;
+      transition: 0.5s
+}
+
+.butt:hover {
+    box-shadow: none;
+}
+
+.tradeP {
+  color: #02734d;
+}
+
+.selectLogo {
+  width: 100%;
+}
+
+.selectLogo:hover {
+  cursor: pointer;
+}
+
+button {
+   outline: none !important;
+}
+
+p {
+  font-family: "Navine";
+}
+
+h5 {
+  font-family: "Navine";
+  color: white;
+}
+
+.transition {
+  position: absolute;
+  background-color: #27251f;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  display: none;
+  background-size: cover;
+  background-position: center;
+}
+
+#trans1 {
+  background-image: url("namathBG copy.jpg");
+}
+
+#trans2 {
+  background-image: url("revisBG.png");
+}
+
+#moreTradesCont {
+  display: none;
+}
+
+#currPickResult {
+  display: none;
+  background-color: #27251f;
+  height: 100%;
+  background-color: #e4e4e4;
+  color: #16366a;
+  font-family: Batman;
+}
+
+#trans3 {
+  background-image: url("markBG.jpg");
+  z-index: 300;
+}
+
+#green {
+  background-color: #00734d;
+  z-index: 301;
+  height: 100%;
+  width: 100%;
+}
+
+.myauto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+
+#draftPoolHeader {
+
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+#pickHistoryHeader {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  display: none;
+}
+
+#yourpickHistoryHeader {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  display: none;
+}
+
+#trans4 {
+  background-image: url("curtisBG.jpg");
+  z-index: 302;
+}
+
+#capSpaceText {
+  background-color: #27251f;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-size: 4vh;
+  box-shadow: inset 6px 6px 6px #000000, inset -6px -6px 6px #3d3a30;
+}
+
+#capBar {
+
+}
+
+.signButton {
+  background: #02734d;
+  box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+}
+
+#resultImage {
+  height: 37vh;
+    margin-bottom: 5px;
+}
+
+#enterButt {
+  margin: 10px;
+
+}
+
+#fixHead {
+  color: white;
+  font-family: "Batman";
+  font-size: 12vw;
+  margin-top: 10px;
+}
+
+#summaryHead {
+  color: white;
+  font-family: "Batman";
+  font-size: 8vh;
+}
+
+#advanceButton {
+  font-size: 3vh;
+}
+
+#dealHead {
+  color: #cfecfe;
+  font-family: "Big Shoulders Inline Display";
+  font-size: 12vw;
+}
+
+#faHead {
+  color: white;
+  font-family: "Batman";
+  font-size: 7vh;
+}
+
+.watsonAssetRow {
+  font-family: "Coda Caption" !important;
+  font-size: 3vh;
+
+      margin-bottom: 5px;
+}
+
+.assetCol {
+  border: 3px solid #098d4c;
+  border-collapse: collapse;
+}
+
+.assetCol:hover {
+   cursor: pointer;
+}
+
+.assetNav {
+  /* position: fixed; */
+}
+
+#resultText {
+  font-size: 7vh;
+  font-family: "Lexend Mega";
+}
+
+#logo {
+  width: 42vh;
+  max-width: 100%;
+}
+
+#instCont {
+  display: none;
+  z-index: 200;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+    background: #e22a44;
+}
+
+#restartButt {
+  box-shadow: none !important;
+}
+
+#faCont {
+  display: none;
+  z-index: 301;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+    background-color: #00734d;
+    background-position: right;
+    background-size: cover;
+}
+#rosterNavCont {
+  /* background-color: lightgreen; */
+  height: 100%;
+  width: 100%;
+  display: none;
+  color: #00734d;
+  background-color: #e8e8e8;
+  border-radius: 25px;
+  padding: 10px;
+  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+}
+
+#signPop {
+  display: none;
+      /* transform: translateY(-100%); */
+      /* height: 11vh; */
+      padding: 4vh;
+      font-size: 1em;
+      position: absolute;
+      width: 68vw;
+      top: -70vh;
+      border-bottom: 5px solid #28b78d;
+      background-color: #11411e;
+      z-index: 100000;
+      border-top-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+}
+
+#dropdownMenuButton {
+    font-family: "Navine" !important;
+}
+
+.dropdown-item {
+  font-family: "Navine" !important;
+}
+
+#faNavCont {
+  /* background-color: lightblue; */
+  height: 70vh;
+  overflow: scroll;
+  width: 100%;
+  background-color: #e8e8e8;
+  border-radius: 20px;
+  padding-top: 10px;
+  color: black;
+  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+}
+
+.playerDiv {
+  box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+  border-radius: 25px;
+  padding: 5px;
+  margin-bottom: 30px;
+}
+
+#broadSort {
+  display: none;
+}
+
+#summary {
+  display: none;
+  z-index: 200;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+    background-color: #00734d;
+    /* background-image: url("jetXlogofade.png"); */
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#summaryLogo {
+  height: 9vh;
+}
+
+.sumAddDrop {
+  font-size: 4vh;
+      font-family: 'Batman';
+      font-style: italic;
+      margin-bottom: 0px;
+}
+
+.sumP {
+  font-size: 1.5vh;
+}
+
+#twitter {
+  color: #00ACEE;
+  font-size: 5vh;
+}
+
+#facebook {
+  color: #3B5998;
+  font-size: 5vh;
+}
+
+#share {
+  background-color: #fdfdfd;
+  border-radius: 49px;
+  /* border: 3px solid #29b68c; */
+  padding: 20px;
+  margin-top: 15px;
+  width: 90%;
+  max-width: 500px;
+  max-width: 500px;
+  margin-left: auto;
+  box-shadow: 4px 4px 4px #0f4734, -4px -4px 4px #0e845c;
+  margin-right: auto;
+  margin-bottom: 15px;
+}
+
+#ryangray {
+  margin-top: 5px;
+  font-family: "Coda Caption";
+  font-style: italic;
+  color: white !important;
+  font-size: 2vh;
+}
+
+#screenshot {
+  font-size: 3vh;
+      font-family: 'Navine';
+      margin-top: -8px;
+      color: #007649;
+}
+
+#screenshot2 {
+  font-size: 1.5vh;
+      font-family: 'Navine';
+      margin-top: -14px;
+      color: #145841;
+}
+
+.movesrost {
+      font-size: 3vh;
+}
+
+#postButtons {
+  width: 100%;
+}
+
+#sCap {
+  font-size: 2vh;
+}
+
+#sRoster {
+  display: none;
+}
+
+.sumSec {
+  font-family: Navine;
+}
+
+
+.faImg {
+  margin-top: 10px;
+  width: 35vh;
+  border-radius: 200px;
+  background: #ececec;
+  box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+}
+
+#draftScreenButton {
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    color: #16366a !important;
+    transition: 0.5s;
+}
+
+#draftScreenButton:hover {
+      box-shadow: none;
+}
+
+.faName {
+  font-family: 'Batman';
+  font-size: 50px;
+  color: #125740 !important;
+  font-style: italic;
+  margin-bottom: 1px;
+}
+
+.faPos {
+  font-family: "Navine";
+  margin-bottom: 1px;
+  font-size: 2.5vh;
+}
+
+.rosterCut {
+  color: #ca5656;
+  padding-top: 0px;
+}
+
+.faPrice {
+  font-family: "Navine";
+  font-size: 2.5vh;
+}
+
+#draftCont {
+  display: none;
+  background-color: #e4e4e4;
+  height: 100%;
+  color: #16366a;
+}
+
+#draftStartScreen {
+  display: none;
+  z-index: 300;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #e4e4e4;
+}
+
+#showDraft {
+  display: none;
+  z-index: 500;
+  position: absolute;
+  height: 200%;
+  width: 100%;
+  background-color: #e4e4e4;
+}
+
+.draftName {
+
+}
+
+.nflDraftLogo1 {
+  width: 30vh;
+}
+
+.nflDraftLogo {
+  width: 20vh;
+
+}
+
+.draftLogo {
+  width: 15vh;
+  margin-top: -30px;
+}
+
+#draftPoolCont {
+  height: 70vh;
+      overflow: scroll;
+      background-color: #ffffff;
+}
+
+.draftButt {
+  background: #0080ca;
+box-shadow: 4px 4px 4px #cbced1, -4px -4px 4px white;
+font-size: 1.8vh;
+font-family: Navine !important;
+}
+
+#pickHistoryCont {
+  display: none;
+  height: 70vh;
+  overflow: scroll;
+  background-color: white;
+}
+
+#yourpickHistoryCont {
+  display: none;
+  height: 70vh;
+  overflow: scroll;
+  background-color: white;
+}
+
+.phLogo {
+  width: 100%;
+}
+
+#showPick {
+  font-family: 'Navine';
+      font-size: 4vh;
+      /* font-style: italic; */
+      color: #0d356f !important;
+}
+
+#tradePrompt {
+  display: none;
+  z-index: 200;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+    background-color: #00734d;
+}
+#watsonTradeAssets {
+  display: none;
+  z-index: 201;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+    background-color: #00734d;
+    /* background-image: url("watsonTradeBG copy.jpg"); */
+    background-position: right;
+    background-size: cover;
+}
+#wilsonTradeAssets {
+  display: none;
+  z-index: 201;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+    background-color: #00734d;
+    /* background-image: url("watsonTradeBG copy.jpg"); */
+    background-position: right;
+    background-size: cover;
+}
+
+
+#assets {
+  height: 77vh;
+overflow: scroll;
+}
+
+.tradeLogo {
+  width: 70%;
+  max-width: 150px;
+  background-color: #eaeaea;
+  /* background-image: url(tradeLogoBG.png); */
+  background-size: cover;
+  /* -webkit-box-shadow: 5px 5px 0px 3px rgb(0 0 0 / 64%); */
+  /* box-shadow: 5px 5px 0px 3px rgb(0 0 0 / 64%); */
+  border-radius: 20px;
+  box-shadow: 4px 4px 4px #d4d4d4, -4px -4px 4px #ffffff;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+
+
+#watsonResult {
+  display: none;
+  z-index: 201;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+    background-color: #00734d;
+    background-position: right;
+    background-size: cover;
+}
+#darnoldTradeOffers {
+  display: none;
+  z-index: 201;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+    background-color: #00734d;
+    background-position: right;
+    background-size: cover;
+}
+#twoTradeOffers {
+  display: none;
+  z-index: 201;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+    background-color: #00734d;
+    background-position: right;
+    background-size: cover;
+}
+
+.tradePromptImg {
+  width: 90%;
+margin-bottom: 10px;
+
+  /* object-fit: cover;
+width: 100%;
+height: 150px; */
+
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+border-radius: 5px;
+-webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.tradePromptImg::after {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+opacity: 0;
+-webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.tradePromptImg:hover {
+  -webkit-transform: scale(1.25, 1.25);
+ transform: scale(1.15, 1.15);
+ cursor: pointer;
+}
+
+.tradePromptImg:hover::after {
+    opacity: 1;
+}
+
+#tradeButton {
+  margin-bottom: 0;
+  font-size: 3vh;
+  border-radius: 20px;
+  background-color: #0080d0;
+  margin-top: 3px;
+  color: white;
+  margin-bottom: 10px;
+  font-family: 'Navine';
+  box-shadow: 4px 4px 4px #c2c2c2, -4px -4px 4px #ffffff;
+  cursor: pointer;
+}
+
+#tradeContinueButton {
+  margin-bottom: 0;
+      font-size: 3vh;
+      border-radius: 20px;
+      background-color: #0080d0;
+      margin-top: 3px;
+      color: white;
+      margin-bottom: 10px;
+      font-family: 'Navine';
+      box-shadow: 4px 4px 4px #c2c2c2, -4px -4px 4px #ffffff;
+      cursor: pointer;
+}
+#pickOfferButton {
+  display: none;
+  margin-bottom: 0;
+  font-size: 3vh;
+  border-radius: 20px;
+  background-color: #0080d0;
+  margin-top: 3px;
+  color: white;
+  margin-bottom: 10px;
+  font-family: 'Navine';
+  box-shadow: 4px 4px 4px #c2c2c2, -4px -4px 4px #ffffff;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.pickResult {
+  font-size: 9vh;
+  font-family: 'Batman';
+  padding: 10px;
+
+
+}
+
+#pickTradeTeamsCont {
+  display: none;
+}
+
+.pickTeam {
+  background-color: #ffffff;
+      border-bottom: 1px solid rgb(11 53 110);
+      /* border-radius: 20px; */
+      cursor: pointer;
+}
+
+.teamPick {
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: #ffffff;
+  /* border-bottom: 1px solid rgb(40, 37, 32); */
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px #d4d4d4, -2px -2px 2px #ffffff;
+}
+
+///////////////////////////////
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+
+
+/////////////////////////////
+/* ----------------------------------------------
+ * Generated by Animista on 2021-1-30 14:24:15
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info.
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+@-webkit-keyframes scale-in-center{0%{-webkit-transform:scale(0);transform:scale(0);opacity:1}100%{-webkit-transform:scale(1);transform:scale(1);opacity:1}}@keyframes scale-in-center{0%{-webkit-transform:scale(0);transform:scale(0);opacity:1}100%{-webkit-transform:scale(1);transform:scale(1);opacity:1}}
+
+.scale-in-center{-webkit-animation:scale-in-center .5s cubic-bezier(.25,.46,.45,.94) both;animation:scale-in-center .5s cubic-bezier(.25,.46,.45,.94) both}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-1-30 14:25:30
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info.
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+@-webkit-keyframes slide-in-bck-center{0%{-webkit-transform:translateZ(600px);transform:translateZ(600px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}@keyframes slide-in-bck-center{0%{-webkit-transform:translateZ(600px);transform:translateZ(600px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}
+
+.slide-in-bck-center{-webkit-animation:slide-in-bck-center .7s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-bck-center .7s cubic-bezier(.25,.46,.45,.94) both}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-1-30 17:43:29
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info.
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+@-webkit-keyframes slide-in-left{0%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);}100%{-webkit-transform:translateX(0);transform:translateX(0);}}@keyframes slide-in-left{0%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);}100%{-webkit-transform:translateX(0);transform:translateX(0);}}
+
+@-webkit-keyframes slide-in-left2{0%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes slide-in-left2{0%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}
+
+.slide-in-left{-webkit-animation:slide-in-left .7s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-left .7s cubic-bezier(.25,.46,.45,.94) both;}
+
+.slide-in-left2{-webkit-animation:slide-in-left2 1.0s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-left2 1.0s cubic-bezier(.25,.46,.45,.94) both; animation-delay: .4s}

@@ -1,0 +1,583 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Whistle Draft</title>
+  <meta name="description" content="Whistle Draft">
+  <meta name="author" content="Ryan Gray">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Display&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Abel&family=Mulish&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
+<link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/bttn.css/0.2.4/bttn.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="jets.css">
+
+</head>
+
+<body onload="load()">
+  <div class="container" id="startCont">
+    <div class="row text-center">
+      <div class="col-sm-12">
+        <img class="scale-in-center" src="whisLogo.png" id="logo">
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-sm-12">
+        <button onclick="startPressed()" class="bttn-md bttn-success butt" id="enterButt">ENTER</button>
+      </div>
+    </div>
+  </div>
+  <div id="instCont" class="slide-in-left">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1 id="fixHead" class="slide-in-left">PICK YOUR TEAM</h1>
+        </div>
+      </div>
+      <div class="container" id="teamSelectCont">
+      </div>
+    </div>
+  </div>
+  <div id="trans2" class="transition slide-in-left" >
+  </div>
+  <div id="tradePrompt" class="slide-in-left2">
+    <div class="container">
+      <h1 id="dealHead" class="slide-in-left2">START OFF WITH A DEAL</h1>
+
+        <button onclick="skipTrade()" class="bttn-md bttn-success butt">SKIP TO FREE AGENCY</button>
+      <hr>
+      <div id="watsonTrade">
+        <div class="row">
+          <div class="col-12">
+            <!-- <p>Trade For Watson</p> -->
+            <img class="tradePromptImg" onclick="yesWatson()" src="watsonTrade.png"></img>
+          </div>
+        </div>
+        <!-- <div class="row">
+          <div class="col-12">
+            <button onclick="yesWatson()">GO</button>
+          </div>
+        </div> -->
+      </div>
+      <div id="wilsonTrade">
+        <div class="row">
+          <div class="col-12">
+            <!-- <p>Trade For Watson</p> -->
+            <img class="tradePromptImg" onclick="yesWilson()" src="wilson.png"></img>
+          </div>
+        </div>
+        <!-- <div class="row">
+          <div class="col-12">
+            <button onclick="yesWatson()">GO</button>
+          </div>
+        </div> -->
+      </div>
+      <!-- <div id="darnoldTrade">
+        <div class="row text-center">
+          <div class="col-12">
+
+            <img class="tradePromptImg" onclick="yesDarnold()" src="darnoldTrade.png"></img>
+          </div>
+        </div>
+
+      </div> -->
+      <div id="twoTrade">
+        <div class="row text-right">
+          <div class="col-12">
+            <!-- <p>Trade Down From #2</p> -->
+            <img class="tradePromptImg" onclick="yesTwo()" src="twoTrade.png"></img>
+          </div>
+        </div>
+        <!-- <div class="row">
+          <div class="col-12">
+            <button onclick="yesTwo()">GO</button>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <!-- <div id="watsonTradeAssets">
+    <div class="container">
+      <div class="assetNav">
+        <div class="row">
+          <div class="col-12">
+            <h1 style="font-family: Big Shoulders Inline Display">Pick the assets you're willing to give up.</h1>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-12">
+            <button onclick="makeOffer()" class=" bttn-md bttn-success butt">MAKE OFFER</button>
+          </div>
+          <div class="col-12">
+            <button onclick="watsonBack()" class=" bttn-md bttn-danger butt">BACK</button>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container" id="assets">
+      </div>
+    </div>
+  </div>
+  <div id="wilsonTradeAssets">
+    <div class="container">
+      <div class="assetNav">
+        <div class="row">
+          <div class="col-12">
+            <h1 style="font-family: Big Shoulders Inline Display">Pick the assets you're willing to give up.</h1>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-12">
+            <button onclick="makeWilsonOffer()" class=" bttn-md bttn-success butt">MAKE OFFER</button>
+          </div>
+          <div class="col-12">
+            <button onclick="watsonBack()" class=" bttn-md bttn-danger butt">BACK</button>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container" id="wilsonassets">
+      </div>
+    </div>
+  </div>
+  <div id="darnoldTradeOffers">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 style="font-family: Big Shoulders Inline Display">Pick the offer you like.</h1>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-12">
+          <button onclick="acceptDarnoldOffer()" class=" bttn-md bttn-success butt">ACCEPT</button>
+        </div>
+        <div class="col-12">
+          <button onclick="darnoldBack()" class=" bttn-md bttn-danger butt">BACK</button>
+        </div>
+      </div>
+      <div class="container" id="darnoldOffers">
+      </div>
+    </div>
+  </div> -->
+  <div id="twoTradeOffers">
+    <div class="container" id="tradeMenu">
+      <div class="row">
+        <div class="col-12">
+          <h1 style="font-family: Batman; margin-top: 15px;">DO YOU WANT TO START WITH A TRADE?</h1>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-12">
+          <button onclick="skipTrade()" class=" bttn-md bttn-danger butt tradeButts">SKIP TO FREE AGENCY</button>
+        </div>
+        <div class="col-12">
+          <button onclick="acceptTwoOffer()" class=" bttn-md bttn-success butt tradeButts" style="margin-top: 10px;">ACCEPT TRADE</button>
+        </div>
+      </div>
+      <div class="container" id="twoOffers">
+
+      </div>
+    </div>
+    <div class="container" id="moreTradesCont">
+      <div class="row">
+        <div class="col-12">
+          <h1 style="font-family: Batman; margin-top:30px; font-size: 6vh">Done! Make Another Trade?</h1>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-12">
+          <button onclick="instPressed()" class=" bttn-md bttn-success butt">YES</button>
+        </div>
+        <div class="col-12">
+          <button onclick="skipTrade()" class=" bttn-md bttn-danger butt">NO</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div  id="watsonResult">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-12">
+          <p id="resultText"></p>
+        </div>
+        <div class="col-12">
+          <img id="resultImage">
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-12">
+          <button onclick="watsonContinue()"  class=" bttn-md bttn-success butt">Continue</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <div id="trans3" class="transition slide-in-left" >
+  </div>
+  <div  id="faCont" class="slide-in-left2">
+    <div class="container">
+        <div class="row text-center" id="capBar">
+          <div class="col-12">
+            <p id="capSpaceText">Cap Space: </p>
+          </div>
+        </div>
+      <h1 id="faHead" class="slide-in-left2">RE-SIGN YOUR GUYS</h1>
+      <div class="row" id="advanceBar">
+        <div class="col-12">
+          <button id="advanceButton" onclick="advanceFA()" class=" bttn-md bttn-success butt">ADVANCE</button>
+          <!-- <button id="draftButton" onclick="draftPressed()">Go to Draft</button> -->
+        </div>
+      </div>
+      <hr>
+      <div class="row text-center" id="navbar" style="margin-bottom: 10px">
+        <div class="col-6">
+          <button onclick="rosterNav()" style="font-size: 4vh;" class="bttn-sm bttn-success butt">CLEAR SPACE</button>
+        </div>
+        <div class="col-6">
+          <button onclick="faNav()" style="font-size: 4vh;" class="bttn-sm bttn-success butt">FREE AGENTS</button>
+        </div>
+      </div>
+      <div class="container" id="rosterNavCont">
+        <div class="row">
+          <div class="col-2">
+            <p class="rosterPos">QB</p>
+          </div>
+          <div class="col-7">
+            <p class="rosterName">Sam Darnold</p>
+          </div>
+          <div class="col-3">
+            <button class="rosterCut">Cut</button>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown" id="broadSort">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          SORT
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" onclick="generateBroadFA('all')">ALL</a>
+          <a class="dropdown-item" onclick="generateBroadFA('QB')">QB</a>
+          <a class="dropdown-item" onclick="generateBroadFA('RB')">RB</a>
+          <a class="dropdown-item" onclick="generateBroadFA('FB')">FB</a>
+          <a class="dropdown-item" onclick="generateBroadFA('WR')">WR</a>
+          <a class="dropdown-item" onclick="generateBroadFA('TE')">TE</a>
+          <!-- <a class="dropdown-item" onclick="generateBroadFA('OL')">OL</a> -->
+          <a class="dropdown-item" onclick="generateBroadFA('OT')">OT</a>
+          <a class="dropdown-item" onclick="generateBroadFA('IOL')">IOL</a>
+          <a class="dropdown-item" onclick="generateBroadFA('IDL')">IDL</a>
+          <a class="dropdown-item" onclick="generateBroadFA('EDGE')">EDGE</a>
+          <a class="dropdown-item" onclick="generateBroadFA('LB')">LB</a>
+          <a class="dropdown-item" onclick="generateBroadFA('CB')">CB</a>
+          <a class="dropdown-item" onclick="generateBroadFA('S')">S</a>
+          <a class="dropdown-item" onclick="generateBroadFA('K')">K</a>
+          <a class="dropdown-item" onclick="generateBroadFA('P')">P</a>
+        </div>
+      </div>
+      <div class="container" id="faNavCont">
+        <!-- <div class="row">
+
+        <div class="col-6">
+        <p class="faName">Frank Gore</p>
+      </div>
+      <div class="col-6">
+      <p class="faPrice">2 yrs/$2M</p>
+    </div>
+
+    <div class="col-2">
+    <p class="faPos">RB</p>
+  </div>
+  <div class="col-3">
+  <p class="faAge">Age: 37</p>
+  </div>
+  <div class="col-3">
+  </div>
+  <div class="col-4">
+  <button>Sign</button>
+  </div>
+
+  </div> -->
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div id="signPop">TEST</div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div id="green" >
+  <div id="trans4" class="transition slide-in-left" >
+<div id="draftStartScreen">
+  <div class="row text-center">
+    <div class="col-12">
+      <img class="nflDraftLogo1" src="nflDraftLogo2022.png"></img>
+    </div>
+    <div class="col-12">
+       <button id="draftScreenButton" onclick="draftPressed()" class=" bttn-md bttn-success butt">START DRAFT</button>
+    </div>
+  </div>
+</div>
+<div id="showDraft">
+  <div class="row text-center">
+    <div class="col-12">
+      <img id="showLogo" class="nflDraftLogo1" src=""></img>
+    </div>
+    <div class="col-12">
+      <p id="showPick" class="nflDraftShowPick"></p>
+    </div>
+  </div>
+</div>
+<div  id="draftCont" class="slide-in-left2">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-6 col-md-4">
+        <img class="nflDraftLogo" src="nflDraftLogo2022.png"></img>
+      </div>
+      <div class="col-6 col-md-8">
+        <p style="margin-top: 15px">ON THE CLOCK: </p>
+            <img id="yourTeamLogo" class="draftLogo" src="https://static.www.nfl.com/image/private/f_auto/league/ekijosiae96gektbo4iw">
+            <p style="margin-top: 15px" id="roundpicktext"></p>
+      </div>
+      <div class="col-4 col-md-3">
+
+      </div>
+      <!-- <div class="col-sm-12">
+        <button onclick="continueDraft()">Continue</button>
+      </div> -->
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-3 col-md-2">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            SORT
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" onclick="generateDraftPool('fifty')">Top 50</a>
+            <a class="dropdown-item" onclick="generateDraftPool('QB')">QB</a>
+            <a class="dropdown-item" onclick="generateDraftPool('RB')">RB</a>
+            <a class="dropdown-item" onclick="generateDraftPool('FB')">FB</a>
+            <a class="dropdown-item" onclick="generateDraftPool('WR')">WR</a>
+            <a class="dropdown-item" onclick="generateDraftPool('TE')">TE</a>
+            <a class="dropdown-item" onclick="generateDraftPool('OT')">OT</a>
+            <a class="dropdown-item" onclick="generateDraftPool('IOL')">IOL</a>
+            <a class="dropdown-item" onclick="generateDraftPool('IDL')">IDL</a>
+            <a class="dropdown-item" onclick="generateDraftPool('EDGE')">EDGE</a>
+            <a class="dropdown-item" onclick="generateDraftPool('LB')">LB</a>
+            <a class="dropdown-item" onclick="generateDraftPool('CB')">CB</a>
+            <a class="dropdown-item" onclick="generateDraftPool('S')">S</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 col-md-2">
+        <button class=" bttn-sm bttn-success butt draftButt" onclick="playersPressed()">PLAYERS</button>
+      </div>
+      <div class="col-3 col-md-4">
+        <button class=" bttn-sm bttn-success butt draftButt" onclick="pickHistoryPressed()">HISTORY</button>
+      </div>
+      <div class="col-3 col-md-4">
+        <button id="yourPicks" class=" bttn-sm bttn-success butt draftButt" style="background-color: #00593e !important" onclick="yourpickHistoryPressed()">JETS PICKS</button>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-12">
+        <p id="tradeButton" onclick="pickTradeScreen()">TRADE</p>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-12">
+        <p id="pickOfferButton" onclick="pickOffer()">MAKE OFFER</p>
+      </div>
+    </div>
+    <div class="container" id="pickTradeTeamsCont">
+
+    </div>
+    <div class="container" id="draftPool">
+      <div class="row" id="draftPoolHeader">
+        <div class="col-2 col-md-1 myauto">
+          <p class="align-middle myauto">RANK</p>
+        </div>
+        <div class="col-2 col-md-1 myauto">
+          <p class="align-middle myauto">POS</p>
+        </div>
+        <div class="col-6 col-md-4 myauto">
+          <p class="align-middle myauto">NAME</p>
+        </div>
+        <div class="d-none d-md-block col-md-4 myauto">
+          <p class="align-middle myauto">SCHOOL</p>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="draftPoolCont">
+
+    </div>
+    <div class="container">
+      <div class="row" id="pickHistoryHeader">
+        <div class="col-2 col-md-1 myauto">
+          <p class="align-middle myauto">TEAM</p>
+        </div>
+        <div class="col-2 col-md-1 myauto">
+          <p class="align-middle myauto">PICK</p>
+        </div>
+        <div class="col-2 col-md-1 myauto">
+          <p class="align-middle myauto">POS</p>
+        </div>
+        <div class="col-6 col-md-4 myauto">
+          <p class="align-middle myauto">NAME</p>
+        </div>
+        <div class="d-none d-md-block col-md-4 myauto">
+          <p class="align-middle myauto">SCHOOL</p>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="pickHistoryCont">
+
+    </div>
+    <div class="container">
+      <div class="row" id="yourpickHistoryHeader">
+        <div class="col-2 col-md-1 myauto">
+          <p class="align-middle myauto">TEAM</p>
+        </div>
+        <div class="col-2 col-md-1 myauto">
+          <p class="align-middle myauto">PICK</p>
+        </div>
+        <div class="col-2 col-md-1 myauto">
+          <p class="align-middle myauto">POS</p>
+        </div>
+        <div class="col-6 col-md-4 myauto">
+          <p class="align-middle myauto">NAME</p>
+        </div>
+        <div class="d-none d-md-block col-md-4 myauto">
+          <p class="align-middle myauto">SCHOOL</p>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="yourpickHistoryCont">
+
+    </div>
+  </div>
+</div>
+<div class="container" id="currPickResult">
+  <div class="row text-center">
+    <div class="col-12">
+      <p class="pickResult">ACCEPTED!!!</p>
+    </div>
+    <div class="col-12">
+      <p id="tradeContinueButton" onclick="tradePickContinue()">CONTINUE</p>
+    </div>
+  </div>
+</div>
+<div  id="summary" class="slide-in-left2">
+  <div class="container">
+    <div class="row">
+      <div class="col-8 col-md-3">
+        <h1 id="summaryHead" class="slide-in-left2">SUMMARY</h1>
+      </div>
+      <div class="col-4 col-md-9">
+        <img id="summaryLogo" src="jetXlogo.png">
+      </div>
+    </div>
+      <div id="sMoves" class="row">
+        <div class="col-6 col-lg-3" id="draftedSection">
+          <div class="row">
+            <div class="col-12">
+              <p class="sumAddDrop" id="dHead">Drafted</p>
+            </div>
+          </div>
+          <div id="drafted"  class="sumSec">
+          </div>
+        </div>
+        <div class="col-6 col-lg-3" id="signedSection">
+          <div class="row">
+            <div class="col-12">
+              <p class="sumAddDrop" id="sHead">Signed</p>
+            </div>
+          </div>
+          <div id="signed"  class="sumSec">
+          </div>
+        </div>
+        <div class="col-6 col-lg-3" id="cutSection">
+          <div class="row">
+            <div class="col-12">
+              <p class="sumAddDrop" id="cutHead">Cut</p>
+            </div>
+          </div>
+          <div id="cutList" class="sumSec" >
+          </div>
+        </div>
+        <div class="col-6 col-lg-3" id="tradedForSection">
+          <div class="row">
+            <div class="col-12">
+              <p class="sumAddDrop" id="tfHead">Traded For</p>
+            </div>
+          </div>
+          <div id="tradedFor" class="sumSec" >
+          </div>
+        </div>
+        <div class="col-6 col-lg-3" id="tradedAwaySection">
+          <div class="row">
+            <div class="col-12">
+              <p class="sumAddDrop" id="taHead">Traded Away</p>
+            </div>
+          </div>
+          <div id="tradedAway" >
+          </div>
+        </div>
+      <!-- <div class="row text-center" id="share">
+        <div class="col-12">
+          <p id="screenshot">Screenshot and Share</p>
+        </div>
+        <div class="col-12">
+          <p id="screenshot2">(Click One)</p>
+        </div>
+        <div class="col-6 col-md-6">
+          <a id="twitter" href="https://twitter.com/jetsxfactor" target="_blank"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
+        </div>
+        <div class="col-6 col-md-6">
+          <a id="facebook" href="https://www.facebook.com/jetsxfactor/" target="_blank"><i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i></a>
+        </div>
+      </div> -->
+      <div class="row text-center" id="postButtons">
+        <div class="col-12">
+          <button onclick="restartPressed()" class=" bttn-md bttn-success butt" id="restartButt">RESTART</button>
+        </div>
+        <!-- <div class="col-6">
+  <button onclick="jetsXHomePressed()" class=" bttn-md bttn-success butt" id="jetsXHome">JET X HOME</button>
+        </div> -->
+      </div>
+  </div>
+  <div class="container" id="sRoster">
+    <div class="row">
+      <div class="col-6" id="sOffense">
+      </div>
+      <div class="col-6" id="sDefense">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="currRoster2022.js"></script>
+<script src="freeAgents2022.js"></script>
+<script src="draftTeams.js"></script>
+<script src="draftPlayers2022.js"></script>
+<script src="trades.js"></script>
+<script src="jets.js"></script>
+</body>
+</html>
