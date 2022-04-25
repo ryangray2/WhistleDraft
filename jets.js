@@ -26,6 +26,8 @@ var sumCap = "";
 var broad = false;
 var currKind = "all";
 
+var styleChoice = 0;
+
 
 function checkTradeAssets(trade) {
   console.log(returnPickIndex(1, true, yourTeam))
@@ -202,13 +204,21 @@ function generateTeamSelect() {
 
 function instPressed() {
   document.getElementById("instCont").style.display = "none";
-    document.getElementById("trans2").style.display = "block";
+    document.getElementById("styleCont").style.display = "block";
 
+}
+
+function stylePressed(n) {
+    console.log(n);
+  document.getElementById("styleCont").style.display = "none";
+    document.getElementById("trans2").style.display = "block";
+styleChoice = n;
 
   generateRoster();
   generateTeamFA();
   // skipTrade();
   doneFA();
+
 }
 
 function skipDraftPressed() {
@@ -1737,7 +1747,15 @@ function doneFA() {
 function draftPressed() {
 
   document.getElementById("draftStartScreen").style.display = "none";
-  startDraft(leftOff); ///// move to button
+  if (styleChoice === 3) {
+
+  } else if (styleChoice === 2) {
+    draftOrder.length = 3;
+  } else {
+  draftOrder.length = 1;
+}
+
+    startDraft(leftOff); ///// move to button
   document.getElementById("draftCont").style.display = "block";
   document.getElementById("trans4").style.background =  "#e4e4e4";
 
@@ -2165,7 +2183,7 @@ function showDraft() {
 function startDraft(n) {
   var stop = false;
   generateDraftPool("fifty");
-  for (var i = n[0]; i < draftOrder.length; i++) {
+  for (var i = n[0]; i < draftOrder.length + 1; i++) {
     if (stop === true) {
       showDraft();
       break;
@@ -2175,7 +2193,7 @@ function startDraft(n) {
     for (var k = n[1]; k < draftOrder[i].length; k++) {
       showAmount++;
       document.getElementById("roundpicktext").innerHTML = "Round " + (i + 1) + " Pick " + (k + 1);
-      if (i === 6 && k === draftOrder[i].length - 1) {
+      if (i === draftOrder.length - 1 && k === draftOrder[i].length - 1) {
         draftOver = true;
       }
       if (k === 0) {
@@ -2183,6 +2201,64 @@ function startDraft(n) {
       }
       if (draftOrder[i][k] != yourTeam) {
         var teamPicking = draftOrder[i][k];
+        var playerTaken = getPick(teamPicking); /// edit to make more random
+        draftSummary.push([teamPicking, playerTaken]);
+        console.log(draftSummary);
+        taken.push(playerTaken);
+        const index = draftPlayers.indexOf(playerTaken);
+        if (index > -1) {
+          draftPlayers.splice(index, 1);
+        }
+        // console.log((k + 1) + " " + teamPicking.name + ": " + playerTaken.name)
+      } else {
+        generateDraftPool("fifty");
+        ///////////////// change
+        // var teamPicking = draftOrder[i][k];
+        // var playerTaken = draftPlayers[0]; /// edit to make more random
+        // taken.push(playerTaken);
+        // const index = draftPlayers.indexOf(playerTaken);
+        // if (index > -1) {
+        //   draftPlayers.splice(index, 1);
+        // }
+        // console.log((k + 1) + " " + teamPicking.name + ": " + playerTaken.name)
+        /////////////////
+        leftOff = [i, k + 1];
+
+        stop = true;
+        break;
+      }
+    }
+    if (draftOver === true) {
+      draftsOver();
+      break;
+    }
+    if (stop == false) {
+          leftOff[1] = 0;
+    }
+  }
+}
+
+function startDraft2(n) {
+  var stop = false;
+  generateDraftPool("fifty");
+  for (var i = n[0]; i < draftOrderStyle2.length; i++) {
+    if (stop === true) {
+      showDraft();
+      break;
+    }
+    var round  = i + 1;
+
+    for (var k = n[1]; k < draftOrderStyle2[i].length; k++) {
+      showAmount++;
+      document.getElementById("roundpicktext").innerHTML = "Round " + (i + 1) + " Pick " + (k + 1);
+      if (i === 6 && k === draftOrderStyle2[i].length - 1) {
+        draftOver = true;
+      }
+      if (k === 0) {
+        // console.log("Round " + round);
+      }
+      if (draftOrderStyle2[i][k] != yourTeam) {
+        var teamPicking = draftOrderStyle2[i][k];
         var playerTaken = getPick(teamPicking); /// edit to make more random
         draftSummary.push([teamPicking, playerTaken]);
         taken.push(playerTaken);
@@ -2220,16 +2296,69 @@ function startDraft(n) {
 }
 
 
+function startDraft1(n) {
+  var stop = false;
+  generateDraftPool("fifty");
+  for (var i = n[0]; i < draftOrderStyle1.length; i++) {
+    if (stop === true) {
+      showDraft();
+      break;
+    }
+    var round  = i + 1;
+
+    for (var k = n[1]; k < draftOrderStyle1[i].length; k++) {
+      showAmount++;
+      document.getElementById("roundpicktext").innerHTML = "Round " + (i + 1) + " Pick " + (k + 1);
+      if (i === 6 && k === draftOrderStyle1[i].length - 1) {
+        draftOver = true;
+      }
+      if (k === 0) {
+        // console.log("Round " + round);
+      }
+      if (draftOrderStyle1[i][k] != yourTeam) {
+        var teamPicking = draftOrderStyle1[i][k];
+        var playerTaken = getPick(teamPicking); /// edit to make more random
+        draftSummary.push([teamPicking, playerTaken]);
+        taken.push(playerTaken);
+        const index = draftPlayers.indexOf(playerTaken);
+        if (index > -1) {
+          draftPlayers.splice(index, 1);
+        }
+        // console.log((k + 1) + " " + teamPicking.name + ": " + playerTaken.name)
+      } else {
+        generateDraftPool("fifty");
+        ///////////////// change
+        // var teamPicking = draftOrder[i][k];
+        // var playerTaken = draftPlayers[0]; /// edit to make more random
+        // taken.push(playerTaken);
+        // const index = draftPlayers.indexOf(playerTaken);
+        // if (index > -1) {
+        //   draftPlayers.splice(index, 1);
+        // }
+        // console.log((k + 1) + " " + teamPicking.name + ": " + playerTaken.name)
+        /////////////////
+        leftOff = [i, k + 1];
+
+        stop = true;
+        break;
+      }
+    }
+    if (draftOver === true) {
+      draftsOver();
+      break;
+    }
+    if (stop == false) {
+          leftOff[1] = 0;
+    }
+  }
+}
+
 function getPick(team) {
   var amount = team.needs.length;
   var possiblePicks = [];
   var qb;
   if (draftSummary.length < 1) {
-    var temp = [AidanHutchinson, KayvonThibodeaux];
-    var num = Math.floor(Math.random() * 2);
-    var ind = draftPlayers.indexOf(temp[num]);
-    console.log("if 1: " + ind);
-    return draftPlayers[ind];
+    return draftPlayers[0];
   }
   if (draftSummary.length == 1) {
     return draftPlayers[0];
@@ -2327,7 +2456,8 @@ function draftPlayer(guy) {
   jetsDrafted.push(guy);
   draftSummary.push([yourTeam, guy]);
     window.scrollTo(0, 0);
-  startDraft(leftOff);
+
+      startDraft(leftOff); ///// move to button
     window.scrollTo(0, 0);
 }
 
@@ -2891,7 +3021,8 @@ function finishPickTrade(hmm) {
 function tradePickContinue() {
   document.getElementById("draftCont").style.display = "block";
   document.getElementById("currPickResult").style.display = "none";
-  startDraft(leftOff);
+
+    startDraft(leftOff); ///// move to button
   pickTradeScreen();
 }
 

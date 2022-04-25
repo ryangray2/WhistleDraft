@@ -238,8 +238,18 @@ h5 {
     background: #e22a44;
 }
 
+#styleCont {
+  display: none;
+  z-index: 201;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+    background: #e22a44;
+}
+
 #restartButt {
   box-shadow: none !important;
+  margin-top: 15px;
 }
 
 #faCont {

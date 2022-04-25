@@ -331,6 +331,18 @@ var draftOrder = [
   [jax, cle, mia, pit, cin, lv, gb, sea, was, buf, den, kc, den, jax, lac, phi, lar, ind, was, pit, car, kc, az, hou, cle, mia, tb, gb, min, kc, cin, lar, lac, lac, az, az, gb, kc, lac, tb, sf]
 ];
 
+
+
+var draftOrderStyle2 = [
+  [jax, det, hou, nyj, nyg, car, nyg, atl, sea, nyj, was, min, hou, bal, phi, no, lac, phi, no, pit, ne, gb, az, dal, buf, ten, tb, gb, kc, kc, cin, det],
+  [jax, det, nyj, nyg, hou, nyj, chi, sea, sea, ind, atl, cle, bal, min, was, chi, no, kc, phi, pit, gb, ne, az, dal, buf, atl, gb, tb, sf, kc, cin, den],
+  [jax, det, nyg, hou, nyj, jax, chi, sea, ind, atl, den, bal, min, cle, lac, hou, nyg, atl, phi, pit, ne, lv, az, dal, buf, ten, tb, gb, sf, kc, cin, den, det, no, cle, bal, phi, mia, kc, lar, sf]
+];
+
+var draftOrderStyle1 = [
+  [jax, det, hou, nyj, nyg, car, nyg, atl, sea, nyj, was, min, hou, bal, phi, no, lac, phi, no, pit, ne, gb, az, dal, buf, ten, tb, gb, kc, kc, cin, det]
+];
+
 var draftValue = [
   [3000, 2600, 2200, 1800, 1700, 1600, 1500, 1400, 1350, 1300, 1250, 1200, 1150, 1100, 1050, 1000, 950, 900, 875, 850, 800, 780, 760, 740, 720, 700, 680, 660, 640, 620, 600, 590],
   [580, 560, 550, 540, 530, 520, 510, 500, 490, 480, 470, 460, 450, 440, 430, 420, 410, 400, 390, 380, 370, 360, 350, 340, 330, 320, 310, 300, 292, 284, 276, 270],
