@@ -181,6 +181,7 @@ function generateTeamSelect() {
     logo.classList.add("selectLogo");
     logo.setAttribute("src", teams[i].logo);
     logo.addEventListener('click', function() {
+            instPressed();
       yourTeam = teams[i];
       document.getElementById("yourTeamLogo").setAttribute("src", yourTeam.logo);
         document.getElementById("restartButt").style.backgroundColor = yourTeam.color;
@@ -190,7 +191,7 @@ function generateTeamSelect() {
       // document.getElementById("yourPicks").innerHTML = yourTeam.name.toUpperCase() + " PICKS";
         document.getElementById("yourPicks").innerHTML = "YOUR PICKS";
         document.getElementById("summary").style.backgroundColor = yourTeam.color;
-      instPressed();
+
     });
 
     logoDiv.appendChild(logo);
@@ -203,13 +204,16 @@ function instPressed() {
   document.getElementById("instCont").style.display = "none";
     document.getElementById("trans2").style.display = "block";
 
-    yesTwo();
+
   generateRoster();
   generateTeamFA();
   // skipTrade();
   doneFA();
 }
 
+function skipDraftPressed() {
+  document.getElementById("showDraft").style.display = "none";
+}
 
 
 function yesWatson() {
