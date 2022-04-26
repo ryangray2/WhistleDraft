@@ -193,6 +193,9 @@ function generateTeamSelect() {
       // document.getElementById("yourPicks").innerHTML = yourTeam.name.toUpperCase() + " PICKS";
         document.getElementById("yourPicks").innerHTML = "YOUR PICKS";
         document.getElementById("summary").style.backgroundColor = yourTeam.color;
+        if (!draftOrder[0].includes(yourTeam)) {
+          document.getElementById("firstRoundButt").style.display = "none";
+        }
 
     });
 
